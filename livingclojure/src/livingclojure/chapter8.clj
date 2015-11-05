@@ -31,7 +31,6 @@
 
 (macroexpand-1 '(def-hi-queen alice-hi-queen "My name is Alice"))
 
-
 ;; templating
 (defmacro def-hi-queen [name phrase]
   `(defn ~(symbol name) []

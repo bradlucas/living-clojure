@@ -1,13 +1,5 @@
 (ns livingclojure.core)
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
-
-
-
-
 (defn rev [s out]
   (if (empty? s)
     out
@@ -20,12 +12,10 @@
     out
     (recur (rest s) (cons (first s) out)))))
 
-
 (defn countdown [n]
   (if (= n 0)
     n
     (countdown (- n 1))))
-
 
 (defn countdown [n]
   (if (= n 0)
@@ -35,14 +25,12 @@
 (defn remove-nils [s]
   (reduce (fn [r x] (if (nil? x) r (conj r x))) [] s))
 
-
 (defn forexample []
   (for [a [1 2 3 4]
         b [5 6 7 8]
         :let [c 0
               d 9]]
     (println (str "a: " a " " "b: " b " " "c: " c " " "d: " d))))
-
 
 (def who-atom (atom :caterpillar))
 
@@ -57,8 +45,6 @@
 (defn inc-print [val]
   (println val)
   (inc val))
-
-
 
 (def alice-height (ref 3))
 (def right-hand-bites (ref 10))
@@ -75,7 +61,6 @@
   (future (dotimes [_ n] (eat-from-right-hand)))
   (future (dotimes [_ n] (eat-from-right-hand)))
   (future (dotimes [_ n] (eat-from-right-hand))))
-
 
 ;; y will always be the value of x + 2
 ;; when one ref is defined in relation to another use ref-set
