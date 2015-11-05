@@ -3,10 +3,8 @@
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [cheshire.core :refer :all :as json]
-
             [ring.middleware.json :as ring-json]
-            [ring.util.response :as rr]
-))
+            [ring.util.response :as rr]))
 
 (defroutes app-routes
   (GET "/" [] "Hello World!!!")
@@ -20,15 +18,12 @@
        )
   (GET "/json2" []
        (rr/response {:first "Brad" :last "Lucas"}))
-  (route/not-found "Not Found")
-)
+  (route/not-found "Not Found"))
 
 ;; see project.clj :ring :handler
 (def app
-;;  (wrap-defaults app-routes site-defaults)
+  ;;  (wrap-defaults app-routes site-defaults)
   (-> app-routes
       (ring-json/wrap-json-response)
       (wrap-defaults site-defaults)))
 
-(defn foo [] 
-  "foo")
