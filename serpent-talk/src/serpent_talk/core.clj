@@ -1,18 +1,11 @@
 (ns serpent-talk.core
   (:require [camel-snake-kebab.core :refer :all :as csk]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
-
 (defn serpent-talk [s]
   (str "Serpent! You said: " (csk/->snake_case s)))
 
-
 (defn -main [& args]
   (println (serpent-talk (first args))))
-
 
 ; v -> [a,b,c,d] representing two points (a, b) and (c, d)
 (defn slope [v]
