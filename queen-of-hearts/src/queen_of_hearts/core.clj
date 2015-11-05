@@ -1,15 +1,6 @@
 (ns queen-of-hearts.core
   (:require [clojure.core.async :as async]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
-
-;; Transducers
-
-
-
 (def flowers ["white carnation"
               "yellow daffodil"
               "yellow rose"
@@ -20,17 +11,13 @@
 
 
 
-
 (defn paint-it-red [s]
   (str "red "
        (last (clojure.string/split s #"\s"))))
 
-
 (defn is-a-rose? [s]
   (= "rose"
      (last (clojure.string/split s #"\s"))))
-
-
 
 ;; Now here is where the transducers come in. We have two transformations
 ;; that we can apply to a vector of flower strings. In the previous
@@ -42,9 +29,6 @@
   (comp
    (map paint-it-red)
    (filter is-a-rose?)))
-
-
-
 
 (def flower-chan (async/chan 1 fix-for-the-queen-xform))
 
