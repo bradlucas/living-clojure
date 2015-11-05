@@ -1,11 +1,9 @@
 (ns async-tea-party.core
   (:require [clojure.core.async :as async])
-  (:gen-class)
-)
+  (:gen-class))
 
 (def google-tea-service-chan (async/chan 10))
 (def yahoo-tea-service-chan (async/chan 10))
-
 
 (defn random-add []
   (reduce + (conj [] (repeat 1 (rand-int 100000)))))
@@ -24,7 +22,6 @@
 
 (def result-chan (async/chan 10))
 
-
 (defn request-tea []
   (request-google-tea-service)
   (request-yahoo-tea-service)
@@ -32,8 +29,6 @@
                        [google-tea-service-chan
                         yahoo-tea-service-chan])]
               (async/>! result-chan v))))
-
-
 
 (defn -main [& args]
   (print "Requesting Tea")
