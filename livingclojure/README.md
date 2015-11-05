@@ -1,8 +1,6 @@
-# living-clojure
+# livingclojure
 
-Some examples worked on from the book 'Living Clojure'
-
-http://shop.oreilly.com/product/0636920034292.do
+A Clojure library designed to ... well, that part is up to you.
 
 ## Usage
 
