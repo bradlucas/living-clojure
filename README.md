@@ -1,10 +1,16 @@
 # living-clojure
 
-Some examples worked on from the book 'Living Clojure'
+Some examples I worked on from the book 'Living Clojure'
 
 http://shop.oreilly.com/product/0636920034292.do
 
-## Usage
+## Sections
+
+* https://github.com/bradlucas/living-clojure/tree/master/async-tea-party
+* https://github.com/bradlucas/living-clojure/tree/master/chesire-cat
+* https://github.com/bradlucas/living-clojure/tree/master/livingclojure
+* https://github.com/bradlucas/living-clojure/tree/master/queen-of-hearts
+* https://github.com/bradlucas/living-clojure/tree/master/serpent-talk
 
 
 ## License
